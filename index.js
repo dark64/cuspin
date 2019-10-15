@@ -11,9 +11,8 @@ function subscribe(name, listener) {
     if (!__subscribes[name]) {
         __subscribes[name] = [];
     }
-    __subscribes[name].push(listener);
-    const index = __subscribes[name].length - 1;
-    return function() {
+    const index = __subscribes[name].push(listener) - 1;
+    return () => {
         __subscribes[name].splice(index, 1);
     }
 }
