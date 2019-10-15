@@ -1,6 +1,6 @@
 {
   "name": "cuspin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cuspin - Minimal Event Manager",
   "main": "index.js",
   "scripts": {
