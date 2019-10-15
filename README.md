@@ -7,12 +7,12 @@
 npm install cuspin
 ```
 
-## Usage example
+## Usage
 
 ```javascript
 import { subscribe, emit } from "cuspin";
 
-// subscribe to en event
+// subscribe to an event
 subscribe('example', (args) => {
     console.log(args)
 })
