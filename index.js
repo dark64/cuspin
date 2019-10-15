@@ -19,11 +19,12 @@ function subscribe(name, listener) {
 }
 
 /**
- * Emits event to all subscribed listeners
+ * Emit event to subscribed listeners
  * @param {string} name Event to emit
  * @param {any} args Event arguments
  */
 function emit(name, args) {
+    if (!__subscribes[name]) return;
     __subscribes[name].forEach(listener => listener(args))
 }
 
