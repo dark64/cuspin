@@ -10,11 +10,16 @@ npm install cuspin
 ## Usage
 
 ```javascript
-import { subscribe, emit } from "cuspin";
+import { subscribe, subscribeOnce, emit } from "cuspin";
 
 // subscribe to an event
 subscribe('example', (args) => {
     console.log(args)
+})
+
+// subscribe once to an event
+subscribeOnce('example', (args) => {
+    console.log(args);
 })
 
 // emit event
