@@ -32,7 +32,7 @@
      */
     function subscribeOnce(name, listener) {
         const unsubscribe = subscribe(name, (args) => {
-            listener.apply(null, args);
+            listener.call(undefined, args);
             unsubscribe();
         });
         return unsubscribe;
@@ -49,7 +49,7 @@
         }
         const listeners = __events[name].listeners;
         for (var index in listeners) {
-            listeners[index](args);
+            listeners[index].call(undefined, args);
         }
     }
 
@@ -58,5 +58,5 @@
     exports.subscribeOnce = subscribeOnce;
 
     Object.defineProperty(exports, '__esModule', { value: true });
-    
+
 }));
